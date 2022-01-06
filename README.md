@@ -10,4 +10,5 @@ Features
 - User authentication to support multiple users on the site
 
 Rails version: Rails 6.1.4.4
+
 Database used: SQLite3
