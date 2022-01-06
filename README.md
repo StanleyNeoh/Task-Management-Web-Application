@@ -1,7 +1,7 @@
-# README
+# TASK Hero
 This is a Task-Management Web Application built for CVWO assignment.
 
-I call it TASK Hero and it is made with React.js and Ruby on Rails and styled by Bootstrap
+Made with React.js and Ruby on Rails and styled by Bootstrap
 
 Features
 - tagging of tasks
