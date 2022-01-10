@@ -16,7 +16,6 @@ Database used: SQLite3
 How to run:
 1) cd into the folder
 2) run "bundle install"
-3) run "rails db:migrate"
-4) run "rails db:seed" for some preloaded tasks and tags (optional)
-
-If there is an error regarding webpacker, run "bundle exec rake webpacker:install" and do not overwrite anything when prompted
+3) run "yarn install"
+4) run "rails db:migrate"
+5) run "rails db:seed" for some preloaded tasks and tags (optional)
