@@ -19,3 +19,4 @@ How to run:
 3) run "yarn install"
 4) run "rails db:migrate"
 5) run "rails db:seed" for some preloaded tasks and tags (optional)
+6) run "rails s" to start the server
