@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  belongs: MyString
+  task: one
+  tag: one
+
+two:
+  belongs: MyString
+  task: two
+  tag: two
