@@ -12,7 +12,7 @@ module Api
             else
                 jsonTag = tag.as_json(options)
                 jsonTag[:tasks] = tag.tasks.where(
-                        "public=true OR (public=false AND user_id='#{session[:user_id]}')"
+                        "public=true OR (public=false AND user_id='#{session[:user_id] || -1}')"
                     ).where(
                         "name LIKE '%#{params[:task_search]}%'"
                     ).order(

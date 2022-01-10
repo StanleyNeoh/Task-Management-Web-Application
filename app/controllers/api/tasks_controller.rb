@@ -2,7 +2,7 @@ module Api
     class TasksController < ApplicationController
         def index
             tasks = Task.where(
-                "public=true OR (public=false AND user_id='#{session[:user_id]}')"
+                "public=true OR (public=false AND user_id='#{session[:user_id] || -1}')"
             ).where(
                 "name LIKE '%#{params[:search]}%'"
             ).order(params[:order])
