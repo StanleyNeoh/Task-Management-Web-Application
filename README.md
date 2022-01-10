@@ -11,4 +11,13 @@ Features
 
 Rails version: Rails 6.1.4.4
 
-Database used: SQLite3
+Database used: PostgreSQL
+
+How to start:
+1) cd into project folder
+2) run "bundle install"
+3) run "yarn install"
+4) run "rails db:create"
+5) run "rails db:migrate"
+6) run "rails db:seed" to preload some tasks and tags (Optional)
+7) run "rails s" to start the server
