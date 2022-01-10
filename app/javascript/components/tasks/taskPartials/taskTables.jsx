@@ -11,7 +11,7 @@ const TasksTable = props => {
                     _key: "name",
                     _name: "Name",
                     _render: data => <Link to={`/tasks/${data.id}`} className="text-white fw-bold">{data["name"]}</Link>,
-                    _sort: "name"
+                    _sort: "LOWER(name)"
                 },
                 {
                     _key: "importance",
@@ -179,7 +179,7 @@ const TasksSelect = props => {
                             _key: "name",
                             _name: "Name",
                             _render: data => <Link to={`/tasks/${data.id}`} className="text-white fw-bold">{data["name"]}</Link>,
-                            _sort: "name"
+                            _sort: "LOWER(name)"
                         },
                         {
                             _key: "importance",

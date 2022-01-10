@@ -10,7 +10,7 @@ const TagsTable = props => {
                     _key: "name",
                     _name: "Name",
                     _render: data => <Link to={`/tags/${data.id}`} style={{color: data.colour, textDecoration: "none"}} className="fw-bold">{data.name}</Link>,
-                    _sort: "name"
+                    _sort: "LOWER(name)"
                 },
                 {
                     _key: "user",
