@@ -35,3 +35,4 @@ Note to self for improvements
 4) Colour code deadlines that are approaching
 5) Improve tagging system
 6) Introduce private tags
+7) Fix bug for change taggings -> some devices can change taggings of tasks while others cant
