@@ -1,17 +1,17 @@
-# TASK Hero
-This is a Task-Management Web Application built for CVWO assignment.
+# [TASKonquer](https://taskonquer-app.herokuapp.com/)
+##This is a Task-Management Web Application built for CVWO assignment.
 
-Made with React.js and Ruby on Rails and styled by Bootstrap
+##Made with React.js and Ruby on Rails and styled by Bootstrap
 
-Features
+###Features
 - tagging of tasks
 - searching of tasks
 - sorting of tasks by name, importance, completion and deadline
 - User authentication to support multiple users on the site
 
-Rails version: Rails 6.1.4.4
+###Rails version: Rails 6.1.4.4
 
-Database used: PostgreSQL
+###Database used: PostgreSQL
 
 How to start:
 1) cd into project folder
@@ -23,8 +23,7 @@ How to start:
 7) run "rails s" to start the server
 
 If database migration required, run the following (For first time launch):
-
+'''
 rails db:migrate:up VERSION=20211228074338
 rails db:migrate
-
-Access the website here at https://taskonquer-app.herokuapp.com/
+'''
