@@ -45,7 +45,7 @@ const Navigation = () =>{
     return (
     <Navbar bg="light" expand="lg">
         <Container>
-            <Navbar.Brand><SLink to="/">TASKHero</SLink></Navbar.Brand>
+            <Navbar.Brand><SLink to="/">TASKonquer</SLink></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
