@@ -21,3 +21,7 @@ How to start:
 5) run "rails db:migrate"
 6) run "rails db:seed" to preload some tasks and tags (Optional)
 7) run "rails s" to start the server
+
+If database migration required, run the following
+rails db:migrate:up VERSION=20211228074338
+rails db:migrate
