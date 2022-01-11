@@ -22,6 +22,8 @@ How to start:
 6) run "rails db:seed" to preload some tasks and tags (Optional)
 7) run "rails s" to start the server
 
-If database migration required, run the following
+If database migration required, run the following (For first time launch)
 rails db:migrate:up VERSION=20211228074338
 rails db:migrate
+
+Access the website here at https://taskonquer-app.herokuapp.com/
