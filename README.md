@@ -33,3 +33,5 @@ Note to self for improvements
 2) "No Deadline" should be sorted last
 3) Completion of tasks should be easy to update
 4) Colour code deadlines that are approaching
+5) Improve tagging system
+6) Introduce private tags
