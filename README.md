@@ -37,3 +37,4 @@ Note to self for improvements
 5) <del>Improve tagging management</del>
 6) Introduce private tags
 7) Fix bug for change taggings -> some devices can change taggings of tasks while others can't
+8) Make app layout compatible for mobile use
