@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import {useNavigate, useParams } from "react-router-dom";
 import { DoesNotExist, SearchBar } from "../partials/misc";
+import { TagsTable } from "../tags/tagPartials/tagTables";
 import { TasksTable } from "../tasks/taskPartials/taskTables";
 
 const Settings = props => {
@@ -49,24 +50,36 @@ const Settings = props => {
     }
 }
 
+const DisplayTriangle = (props)=>{
+    return props.displayed
+            ? <span style={{color: "white"}}>&#9662;</span>
+            : <span style={{color: "white"}}>&#9652;</span>;
+}
+
 const ShowUser = (props)=>{  
     const [userData, setUserData] = useState({});
     const [loaded, setLoaded] = useState(false);
-    const [search, setSearch] = useState("");
-    const [sortState, setSortState] = useState({order: ""});
+
+    const [displayTask, setDisplayTask] = useState(false);
+    const [displayTag, setDisplayTag] = useState(false);
+    const [taskSearch, setTaskSearch] = useState("");
+    const [tagSearch, setTagSearch] = useState("");
+    const [taskSortState, setTaskSortState] = useState({order: ""});
+    const [tagSortState, setTagSortState] = useState({order: ""});
+
     const params = useParams();
 
     useEffect(async ()=>{
-        await axios.get(`/api/users/${params.id}?task_order=${sortState.order}&task_search=${search}`)
+        await axios.get(`/api/users/${params.id}?task_order=${taskSortState.order}&task_search=${taskSearch}&tag_order=${tagSortState.order}&tag_search=${tagSearch}`)
         .then(res => {
             setUserData(res.data)
             setLoaded(true)
         })
         .catch(res => console.log(res))
-    }, [sortState.order, search, params])
+    }, [tagSortState.order, tagSearch, taskSortState.order, taskSearch, params])
 
 
-    function handleSort(e){
+    function handleSort(e, sortState, setSortState){
         const key = e.target.attributes.associated.value
         const query = e.target.attributes.query.value
         if(sortState.key == key){
@@ -84,29 +97,53 @@ const ShowUser = (props)=>{
         }
     }
 
-    function handleSearch(e){
+    function handleSearch(e, setSearch){
         e.preventDefault();
         setSearch(e.target[0].value);
     }
 
     if(!loaded){
-        return null
+        return null;
     } else if(!userData.username){
-        return (
-            <DoesNotExist item="user"/>
-        )
+        return <DoesNotExist item="user"/>;
     }else {
+        const isOwner = params.id == userData.session_id;
+        const whose = isOwner ? "Your" : `${userData.username}'s`
         return (
             <Container className="text-light mt-5">
                 <Row>
                     <Col className="fs-1">{userData.username}</Col>
-                    <Col xs="auto"><Settings display={params.id == userData.session_id}/></Col>
-                    <Col xs="auto"><SearchBar handleSearch={handleSearch}/></Col>
+                    <Col xs="auto">
+                        <Settings display={isOwner}/>
+                    </Col>
+                </Row>
+                <Row className="mt-5">
+                    <Col className="fs-2" onClick={()=>setDisplayTask(!displayTask)}>
+                        {whose} Tasks <DisplayTriangle displayed={displayTask}/>
+                    </Col>
+                    <Col xs="auto">
+                        <SearchBar handleSearch={(e)=>handleSearch(e, setTaskSearch)} hide={!displayTask}/>
+                    </Col>
                 </Row>
                 <TasksTable
                     tasks={userData.tasks} 
-                    handleSort={handleSort} 
-                    sortState={sortState}
+                    handleSort={(e)=>handleSort(e, taskSortState, setTaskSortState)} 
+                    sortState={taskSortState}
+                    hide={!displayTask}
+                />
+                <Row className="mt-5">
+                    <Col className="fs-2" onClick={()=>setDisplayTag(!displayTag)}>
+                        {whose} Tags <DisplayTriangle displayed={displayTag}/>
+                    </Col>
+                    <Col xs="auto">
+                        <SearchBar handleSearch={(e)=>handleSearch(e, setTagSearch)} hide={!displayTag}/>
+                    </Col>
+                </Row>
+                <TagsTable 
+                    tags={userData.tags} 
+                    handleSort={(e)=>handleSort(e, tagSortState, setTagSortState)} 
+                    sortState={tagSortState}
+                    hide={!displayTag}
                 />
             </Container>
         )

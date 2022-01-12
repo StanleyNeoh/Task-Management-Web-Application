@@ -3,6 +3,9 @@ import { DataTable, ShowTable } from "../../partials/tables";
 import { Link } from "react-router-dom";
 
 const TagsTable = props => {
+    if(props.hide){
+        return null;
+    }
     return (
         <DataTable 
             labels={[
@@ -26,6 +29,9 @@ const TagsTable = props => {
 }
 
 const TagTable = props => {
+    if(props.hide){
+        return null;
+    }
     return (
         <ShowTable
             labels={[

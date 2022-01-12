@@ -34,6 +34,6 @@ Note to self for improvements
 2) <del>"No Deadline" should be sorted last</del>
 3) Completion of tasks should be easy to update
 4) <del>Colour code deadlines that are approaching</del>
-5) Improve tagging system
+5) <del>Improve tagging management</del>
 6) Introduce private tags
-7) Fix bug for change taggings -> some devices can change taggings of tasks while others cant
+7) Fix bug for change taggings -> some devices can change taggings of tasks while others can't

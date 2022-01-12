@@ -18,6 +18,9 @@ const Unauthorised = props => {
 }
 
 const SearchBar = props => {
+    if(props.hide){
+        return null;
+    }
     return (
         <Form onSubmit={props.handleSearch}>
             <Row className="m-0 p-0">

@@ -4,6 +4,9 @@ import { DataTable, ShowTable } from "../../partials/tables";
 import { Link } from "react-router-dom";
 
 const TasksTable = props => {
+    if(props.hide){
+        return null;
+    }
     return (
         <DataTable 
             labels={[
@@ -84,6 +87,9 @@ const TasksTable = props => {
 }
 
 const TaskTable = props => {
+    if(props.hide){
+        return null;
+    }
     return (
         <ShowTable
             labels={[
@@ -155,6 +161,9 @@ const TaskTable = props => {
 }
 
 const TasksSelect = props => {
+    if(props.hide){
+        return null;
+    }
     const [loaded, setLoaded] = useState(false);
     const [startState, setStartState] = useState(new Set());
     const [currentState, setCurrentState] = useState(new Set());

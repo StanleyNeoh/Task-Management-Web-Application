@@ -15,7 +15,9 @@ module Api
                 ).where(
                     "LOWER(name) LIKE LOWER('%#{params[:task_search]}%')"
                 ).order(params[:task_order]).as_json(tasks_options);
-
+                jsonUser[:tags] = user.tags.where(
+                    "LOWER(name) LIKE LOWER('%#{params[:tag_search]}%')"
+                ).order(params[:tag_order]).as_json(tags_options);
                 jsonUser[:session_id] = session[:user_id]
                 render json: jsonUser
             end 
@@ -70,13 +72,17 @@ module Api
         def tasks_options
             @taskOptions ||= { include: [:tags, :user], methods: [:timeLeft] }
         end
+
+        def tags_options
+            @tagOptions ||= { include: :user }
+        end
         
         def user_params
             filtered = params.require(:user).permit(:username, :password, :password_confirmation)
             return filtered
         end
         def options
-            @options ||= {only: [:username], include: [:tags]}
+            @options ||= {only: [:username]}
         end
     end
 end

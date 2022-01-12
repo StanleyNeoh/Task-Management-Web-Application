@@ -18,7 +18,6 @@ module Api
                     ).order(
                         params[:task_order]
                     ).as_json(tasks_options)     #Use the task serializer option as_json to get associated tags to all tasks
-                
                 jsonTag[:session_id] = session[:user_id]
                 render json: jsonTag
             end
