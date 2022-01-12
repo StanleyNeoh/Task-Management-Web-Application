@@ -30,17 +30,20 @@ const Home= () => {
                 </Col>
                 <Col>
                     <Card className="bg-dark text-white" onClick={()=>navigate("/tags")}>
-                            <Card.Img src="https://res.cloudinary.com/deb0xrj56/image/upload/c_crop,h_450,w_640/v1642000569/CVWO%20assets/alireza-zarafshani-Kn9_CWO8Gx8-unsplash_xhvf9j.jpg" alt="Card image" />
-                            <Card.ImgOverlay>
-                                <Card.Title>Manage your Tags</Card.Title>
-                                <Card.Text>
-                                    TASKonquer allows you to tag your tasks and group them at your convinience.
-                                </Card.Text>
-                                <Card.Text>
-                                    Customise your tags with colours to stay one step ahead of the deadlines.
-                                </Card.Text>
-                            </Card.ImgOverlay>
-                        </Card>
+                        <Card.Img src="https://res.cloudinary.com/deb0xrj56/image/upload/c_crop,h_450,w_640/v1642000569/CVWO%20assets/alireza-zarafshani-Kn9_CWO8Gx8-unsplash_xhvf9j.jpg" alt="Card image" />
+                        <Card.ImgOverlay>
+                            <Card.Title>Manage your Tags</Card.Title>
+                            <Card.Text>
+                                TASKonquer allows you to tag your tasks and group them at your convinience.
+                            </Card.Text>
+                            <Card.Text>
+                                Customise your tags with colours to stay one step ahead of the deadlines.
+                            </Card.Text>
+                            <Card.Text>
+                                Click on the card to look at all tags
+                            </Card.Text>
+                        </Card.ImgOverlay>
+                    </Card>
                 </Col>        
             </Row>
         </Container>
