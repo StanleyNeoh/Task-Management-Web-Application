@@ -13,7 +13,7 @@
 
 ### Database used: PostgreSQL
 
-### How to start:
+### How to run the code locally:
 1) cd into project folder
 2) run "bundle install"
 3) run "yarn install"
@@ -29,8 +29,8 @@ rails db:migrate
 ```
 
 Note to self for improvements
-1) Search is currently case-sensitive, it shouldnt be
-2) "No Deadline" should be sorted last
+1) <del>Search is currently case-sensitive, it shouldnt be</del>
+2) <del>"No Deadline" should be sorted last</del>
 3) Completion of tasks should be easy to update
 4) Colour code deadlines that are approaching
 5) Improve tagging system

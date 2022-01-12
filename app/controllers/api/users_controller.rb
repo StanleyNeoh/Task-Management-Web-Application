@@ -13,7 +13,7 @@ module Api
                 jsonUser[:tasks] = user.tasks.where(
                     "public=true OR (public=false AND user_id='#{session[:user_id] || -1}')"
                 ).where(
-                    "name LIKE '%#{params[:task_search]}%'"
+                    "LOWER(name) LIKE LOWER('%#{params[:task_search]}%')"
                 ).order(params[:task_order]).as_json(tasks_options);
 
                 jsonUser[:session_id] = session[:user_id]

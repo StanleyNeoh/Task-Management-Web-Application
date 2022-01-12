@@ -22,12 +22,13 @@ const TasksTable = props => {
                 {
                     _key: "timeLeft",
                     _name: "Time Left", 
+                    _render: data => data.timeLeft || "No Deadline",
                     _sort: "deadline"
                 },
                 {
                     _key: "deadline",
                     _name: "Deadline",
-                    _render: data => data.deadline ? data.deadline.substring(0,10) : "No Deadline",
+                    _render: data => data.timeLeft && data.deadline ? data.deadline.substring(0,10) : "No Deadline",
                     _sort: "deadline",
                 }, 
                 {
@@ -83,12 +84,13 @@ const TaskTable = props => {
                 }, 
                 {
                     _key: "timeLeft",
-                    _name: "Time Left", 
+                    _name: "Time Left",
+                    _show: data => data || "No Deadline"
                 },
                 {
                     _key: "deadline",
                     _name: "Deadline",
-                    _show: data => data ? data.substring(0,10) : "No Deadline",
+                    _show: data => props.task.timeLeft && data ? data.substring(0,10) : "No Deadline",
                 }, 
                 {
                     _key: "public",
@@ -189,13 +191,14 @@ const TasksSelect = props => {
                         }, 
                         {
                             _key: "timeLeft",
-                            _name: "Time Left", 
+                            _name: "Time Left",
+                            _render: data => data.timeLeft || "No Deadline",
                             _sort: "deadline"
                         },
                         {
                             _key: "deadline",
                             _name: "Deadline",
-                            _render: data => data.deadline ? data.deadline.substring(0,10) : "No Deadline",
+                            _render: data => data.timeLeft && data.deadline ? data.deadline.substring(0,10) : "No Deadline",
                             _sort: "deadline",
                         }, 
                         {

@@ -1,7 +1,7 @@
 module Api
     class TagsController < ApplicationController
         def index
-            tags = Tag.all.where("name LIKE '%#{params[:search]}%'").order(params[:order])
+            tags = Tag.all.where("LOWER(name) LIKE LOWER('%#{params[:search]}%')").order(params[:order])
             render json: tags.as_json(options)   # This works as well
         end
         
@@ -14,7 +14,7 @@ module Api
                 jsonTag[:tasks] = tag.tasks.where(
                         "public=true OR (public=false AND user_id='#{session[:user_id] || -1}')"
                     ).where(
-                        "name LIKE '%#{params[:task_search]}%'"
+                        "LOWER(name) LIKE LOWER('%#{params[:task_search]}%')"
                     ).order(
                         params[:task_order]
                     ).as_json(tasks_options)     #Use the task serializer option as_json to get associated tags to all tasks

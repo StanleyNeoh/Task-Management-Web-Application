@@ -11,11 +11,13 @@ class Task < ApplicationRecord
   before_save do |task|
     if task.deadline.present?
       task.deadline = task.deadline.to_datetime.change(offset: DateTime.now.zone).at_end_of_day
+    else 
+      task.deadline = DateTime.now.change(year: DateTime.now.year + 2000)
     end
   end
 
   def timeLeft
-    if deadline.present?
+    if deadline.present? && deadline.year - DateTime.now.year <= 1000
       total_seconds = (deadline - DateTime.now).to_i
       days = (total_seconds/86400).to_i
       total_seconds %= 86400
@@ -25,8 +27,6 @@ class Task < ApplicationRecord
       total_seconds %= 60
       seconds = total_seconds
       return "#{days}d #{hours}h #{minutes}m #{seconds}s"
-    else
-      return "No Deadline"
     end
   end
 

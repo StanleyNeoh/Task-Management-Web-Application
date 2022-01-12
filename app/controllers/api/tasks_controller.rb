@@ -4,7 +4,7 @@ module Api
             tasks = Task.where(
                 "public=true OR (public=false AND user_id='#{session[:user_id] || -1}')"
             ).where(
-                "name LIKE '%#{params[:search]}%'"
+                "LOWER(name) LIKE LOWER('%#{params[:search]}%')"
             ).order(params[:order])
             render json: tasks.as_json(options)
         end
