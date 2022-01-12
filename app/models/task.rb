@@ -26,7 +26,7 @@ class Task < ApplicationRecord
       minutes = (total_seconds/60).to_i
       total_seconds %= 60
       seconds = total_seconds
-      return "#{days}d #{hours}h #{minutes}m #{seconds}s"
+      return [days, hours, minutes, seconds]
     end
   end
 

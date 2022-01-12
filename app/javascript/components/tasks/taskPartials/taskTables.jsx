@@ -22,7 +22,21 @@ const TasksTable = props => {
                 {
                     _key: "timeLeft",
                     _name: "Time Left", 
-                    _render: data => data.timeLeft || "No Deadline",
+                    _render: data => {
+                        if(data.timeLeft){
+                            const timeleft = `${data.timeLeft[0]}d ${data.timeLeft[1]}h ${data.timeLeft[2]}m ${data.timeLeft[3]}s`;
+                            const color = data.timeLeft[0] < 0
+                                            ? "gray"
+                                            : data.timeLeft[0] < 1
+                                            ? "red"
+                                            : data.timeLeft[0] < 7
+                                            ? "yellow"
+                                            : "white";
+                            return <span style={{color: color}}>{timeleft}</span>;
+                        } else {
+                            return "No Deadline";
+                        }
+                    },
                     _sort: "deadline"
                 },
                 {
@@ -85,7 +99,21 @@ const TaskTable = props => {
                 {
                     _key: "timeLeft",
                     _name: "Time Left",
-                    _show: data => data || "No Deadline"
+                    _show: data => {
+                        if(data){
+                            const timeleft = `${data[0]}d ${data[1]}h ${data[2]}m ${data[3]}s`;
+                            const color = data[0] < 0
+                                            ? "gray"
+                                            : data[0] < 1
+                                            ? "red"
+                                            : data[0] < 7
+                                            ? "yellow"
+                                            : "white";
+                            return <span style={{color: color}}>{timeleft}</span>;
+                        } else {
+                            return "No Deadline";
+                        }
+                    }
                 },
                 {
                     _key: "deadline",
@@ -192,7 +220,21 @@ const TasksSelect = props => {
                         {
                             _key: "timeLeft",
                             _name: "Time Left",
-                            _render: data => data.timeLeft || "No Deadline",
+                            _render: data =>{
+                                if(data.timeLeft){
+                                    const timeleft = `${data.timeLeft[0]}d ${data.timeLeft[1]}h ${data.timeLeft[2]}m ${data.timeLeft[3]}s`;
+                                    const color = data.timeLeft[0] < 0
+                                                    ? "gray"
+                                                    : data.timeLeft[0] < 1
+                                                    ? "red"
+                                                    : data.timeLeft[0] < 7
+                                                    ? "yellow"
+                                                    : "white";
+                                    return <span style={{color: color}}>{timeleft}</span>;
+                                } else {
+                                    return "No Deadline";
+                                }
+                            },
                             _sort: "deadline"
                         },
                         {
