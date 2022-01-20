@@ -3,9 +3,9 @@
 ## Stanley Neoh Jia Jun (A0234457B)
 This is a Task-Management Web Application built for CVWO assignment.
 Made with React.js and Ruby on Rails and styled by Bootstrap
-Rails version: Rails 6.1.4.4
-Database used: PostgreSQL
-User authentication done with bcrypt gem
+###### Rails version: Rails 6.1.4.4
+###### Database used: PostgreSQL
+###### User authentication done with bcrypt gem
 
 ## Use cases and features
 1. Basic CRUD functionality for Tasks and Tags
