@@ -63,7 +63,7 @@ If you are want to look at the tasks of a particular user, here is the place to 
 
 If you are logged in as the user you are looking at, you can update your account details here as well as delete your account if you choose.
 
-Feel free to explore the applications to see how it works!
+Feel free to explore the application to see how it works!
 
 ## Reflections on the project
 The making of this web application has been quite challenging but fruitful. I encountered many many hiccups during the development process such as postgresql not being installed properly to errors during compilation on heroku. This was my first time properly developing something and at first glance the assignment appeared too much for me to handle. I have thought of giving up at several points in time during development process but I learnt to take things a step at a time. I started with a plan before working with the backend a model at a time before building the frontend with react. I learn how much I can do without having to fully understand the inner workings of the framework. I am quite proud of this tiny app and develop much appreciation of the amount of engineering that goes behind software all around me. I intend get my hands dirty with another project soon.
