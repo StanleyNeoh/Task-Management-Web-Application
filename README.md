@@ -3,11 +3,26 @@
 
 ## Made with React.js and Ruby on Rails and styled by Bootstrap
 
-### Features
-- tagging of tasks
-- searching of tasks
-- sorting of tasks by name, importance, completion and deadline
-- User authentication to support multiple users on the site
+### Description
+This is a web app that can keep track of the tasks from multiple users.
+Users will be able to track the urgency and importance of a task using deadlines and importance rankings.
+Users can choose to display their tasks as public or private and mark the tasks when completed.
+Users can make tags to categorise their own tasks.
+
+### Use cases and features
+1. Basic CRUD functionality for Tasks and Tags
+    * Public tasks and all tags are accessible to all users
+    * Private tasks are only accessible to the user who owns the task
+    * Users can only create, update, and delete tasks when logged in
+    * Users can add / remove their tasks to / from their own tag
+2. Sorting and filtering of tasks by parameters and tags respectively
+    * Query string from the “get” request can be used to determine how sorting is done
+    * Tags can be used to filter tasks, showing only the tasks that are tagged
+3. User friendly interface
+    * Intuitive task management and tagging
+4. User authentication
+    * Done with “bcrypt” gem
+    * Ensure that only authorised user can perform CRUD on the appropriate Tasks and Tags
 
 ### Rails version: Rails 6.1.4.4
 
