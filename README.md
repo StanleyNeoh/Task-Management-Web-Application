@@ -40,30 +40,30 @@ In the tasks page, you can see all public tasks by other users and your own task
 
 ### Tags page
 ![Tags page when not logged in](https://res.cloudinary.com/deb0xrj56/image/upload/v1642679653/CVWO%20assets/README%20Pics/Tags_notLoggedIn_ahbt1d.png)
-In the tags page, you can see all tags by all users. Tags can be sort by name or searched for with the search box.
+In the tags page, you can see all tags by all users. Tags can be sorted by name or searched for with the search box.
 
 ### Logging in
 ![Login page](https://res.cloudinary.com/deb0xrj56/image/upload/v1642680028/CVWO%20assets/README%20Pics/Login_loggingin_uuawxs.png)
-In the login page, you can login to your account or click on the create new account to make a new account. Once logged in, you will be able to create, read, update and delete your tasks and tags.
+In the login page, you can login to your account or click on "create new account" to make a new account. Once logged in, you will be able to create, read, update and delete your tasks and tags.
 
 ### Looking at a particular task
 ![Particular task](https://res.cloudinary.com/deb0xrj56/image/upload/v1642680377/CVWO%20assets/README%20Pics/Task_main_w09kfk.png)
-Here you can edit your task and delete the task if you are the owner of the task.
+Here you can edit or delete the displayed task if you are the owner of the task.
 
 ### Looking at a particular tag
 ![Particular tag](https://res.cloudinary.com/deb0xrj56/image/upload/v1642680607/CVWO%20assets/README%20Pics/Tag_main_icxkih.png)
-Here you can look at all tasks associated to the tags as well as edit and delete the tag if you are the owner of the tag. The table of tasks is the same as that of the main tasks page so sorting, searching are supported.
+Here you can look at all tasks associated to the tags as well as edit and delete the tag if you are the owner of the tag. The table of tasks is the same as the table found on the main tasks page, hence sorting and searching are supported.
 
 ![Update Tagging](https://res.cloudinary.com/deb0xrj56/image/upload/v1642680716/CVWO%20assets/README%20Pics/Tag_updateTagging_fig9rp.png)
-If you click on the change tagging button, you will be brought here where you can choose which task will have the tag. When you are done, click on update taggings to re-tag your tasks.
+If you click on the "change taggings" button, you will be brought here where you can choose which task will have the tag. When you are done, click on "update taggings" to re-tag your tasks.
 
 ### Looking at a particular User
 ![Particular User](https://res.cloudinary.com/deb0xrj56/image/upload/v1642681041/CVWO%20assets/README%20Pics/User_main_mbmavd.png)
-If you are want to look at the tasks of a particular user, here is the place to go. You can click on expand out and view all tasks and tags belonging to the user. Similar to the the main tasks and tags page, you can sort the tasks and tags by clicking on the column headers and search for a particular task or tag you are looking for.
+If you are want to look at the tasks of a particular user, here is the place to go. You can choose to expand out and view all tasks and tags belonging to the user. Similar to the the main tasks and tags page, you can sort the tasks and tags by clicking on the column headers and search for a particular task or tag you are looking for.
 
 If you are logged in as the user you are looking at, you can update your account details here as well as delete your account if you choose.
 
 Feel free to explore the application to see how it works!
 
 ## Reflections on the project
-The making of this web application has been quite challenging but fruitful. I encountered many hiccups during the development process from postgresql not being installed properly to errors during compilation on heroku. This was my first time properly developing something and at first glance the assignment appeared too much for me to handle. I have thought of giving up at several points in time during development process but I learnt to take things a step at a time. I started with a plan before working with the backend a model at a time before building the frontend with react. I learnt how much I can do without having to fully understand the inner workings of the framework. I am quite proud of this tiny app and develop much appreciation of the amount of engineering that goes behind software all around me. I intend get my hands dirty with another project soon. Overall, I thoroughly enjoyed the development process and being able to see a working product forming before me.
+The making of this web application has been quite challenging but fruitful. I encountered many hiccups during the development process from PostgreSQL not being installed properly to facing compilation errors on Heroku during deployment. This was my first time properly developing something and at first glance the assignment appeared too much for me to handle. I have thought of giving up at several points in time during development but eventually, I have learnt to take things one step at a time. I began with a plan before building the backend one model at a time before moving onto the frontend with React. I learnt how much I can do without having to fully understand the inner workings of the framework. I am quite proud of this tiny app and have developed much appreciation for the amount of engineering that goes behind the software all around me. I intend to get my hands dirty with another project soon. Overall, I thoroughly enjoyed the development process and being able to see a working product appear before me.
