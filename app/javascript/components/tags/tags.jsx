@@ -36,7 +36,7 @@ const Tags = (props)=>{
                         <Button variant="secondary" onClick={()=>{navigate("create")}}>Create New Tag</Button>
                     </Col>
                 </Row>
-                <TagsTable tags={Tags} handleSort={e => handleSort(e, setSortState)} sortState={sortState}/>
+                <TagsTable tags={Tags} handleSort={e => handleSort(e, sortState, setSortState)} sortState={sortState}/>
             </Container>
         )
     }    

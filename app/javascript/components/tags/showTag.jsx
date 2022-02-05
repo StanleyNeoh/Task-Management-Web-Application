@@ -70,7 +70,7 @@ const ShowTag = props => {
                     <Col xs="auto"><Settings display={tag.user_id == tag.session_id}/></Col>
                     <Col xs="auto"><SearchBar handleSearch={e => handleSearch(e, setSearch)}/></Col>
                 </Row>
-                <TasksTable tasks={tag.tasks} handleSort={e => handleSort(e, setSortState)} sortState={sortState} />
+                <TasksTable tasks={tag.tasks} handleSort={e => handleSort(e, sortState, setSortState)} sortState={sortState} />
             </Container>
         )
     }

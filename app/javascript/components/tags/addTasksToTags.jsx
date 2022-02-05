@@ -69,7 +69,7 @@ const AddTasksToTags = props => {
                 <TasksSelect
                     tag_id={tag.id} 
                     tasks={user.tasks} 
-                    handleSort={e => handleSort(e, setSortState)} 
+                    handleSort={e => handleSort(e, sortState, setSortState)} 
                     sortState={sortState}
                     handleTagging={handleTagging}
                 >

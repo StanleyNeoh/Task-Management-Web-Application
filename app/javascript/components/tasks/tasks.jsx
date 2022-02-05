@@ -36,7 +36,7 @@ const Tasks = (props)=>{
                         <SearchBar handleSearch={e => handleSearch(e, setSearch)}/>
                     </Col>
                 </Row>
-                <TasksTable tasks={tasks} handleSort={e => handleSort(e, setSortState)} sortState={sortState} />
+                <TasksTable tasks={tasks} handleSort={e => handleSort(e, sortState, setSortState)} sortState={sortState} />
             </Container>
         )
     }    
