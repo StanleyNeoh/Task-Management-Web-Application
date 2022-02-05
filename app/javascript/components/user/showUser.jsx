@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, {useState, useEffect} from "react";
+import { handleSort, handleSearch } from "../../functions/handlers";
 import { Button, Col, Container, Row } from "react-bootstrap";
-import {useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { DoesNotExist, SearchBar } from "../partials/misc";
 import { TagsTable } from "../tags/tagPartials/tagTables";
 import { TasksTable } from "../tasks/taskPartials/taskTables";
@@ -77,30 +78,6 @@ const ShowUser = (props)=>{
         })
         .catch(res => console.log(res))
     }, [tagSortState.order, tagSearch, taskSortState.order, taskSearch, params])
-
-
-    function handleSort(e, sortState, setSortState){
-        const key = e.target.attributes.associated.value
-        const query = e.target.attributes.query.value
-        if(sortState.key == key){
-            setSortState({
-                key: key, 
-                ascending: !sortState.ascending, 
-                order: !sortState.ascending ? `${query}` : `${query} DESC`
-            });
-        } else {
-            setSortState({
-                key: key, 
-                ascending: true, 
-                order: `${query}`
-            });
-        }
-    }
-
-    function handleSearch(e, setSearch){
-        e.preventDefault();
-        setSearch(e.target[0].value);
-    }
 
     if(!loaded){
         return null;

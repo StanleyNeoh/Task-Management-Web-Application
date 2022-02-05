@@ -33,29 +33,6 @@ const AddTasksToTags = props => {
         .catch(res => console.log(res));
     }, [sortState.order, search, params])
 
-    function handleSort(e){
-        const key = e.target.attributes.associated.value
-        const query = e.target.attributes.query.value
-        if(sortState.key == key){
-            setSortState({
-                key: key, 
-                ascending: !sortState.ascending, 
-                order: !sortState.ascending ? `${query}` : `${query} DESC`
-            });
-        } else {
-            setSortState({
-                key: key, 
-                ascending: true, 
-                order: `${query}`
-            });
-        }
-    }
-
-    function handleSearch(e){
-        e.preventDefault();
-        setSearch(e.target[0].value);
-    }
-
     async function handleTagging(toAdd, toRemove){
         const errorResponses = [];
         await toAdd.forEach(id => {
@@ -92,12 +69,12 @@ const AddTasksToTags = props => {
                 <TasksSelect
                     tag_id={tag.id} 
                     tasks={user.tasks} 
-                    handleSort={handleSort} 
+                    handleSort={e => handleSort(e, setSortState)} 
                     sortState={sortState}
                     handleTagging={handleTagging}
                 >
                     <Col className="fs-1">Add Tasks to <span style={{color: tag.colour}}>{tag.name}</span></Col>
-                    <Col xs="auto"><SearchBar handleSearch={handleSearch}/></Col>
+                    <Col xs="auto"><SearchBar handleSearch={e => handleSearch(e, setSearch)}/></Col>
                 </TasksSelect>
             </Container>
         )

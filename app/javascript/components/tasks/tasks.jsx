@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, {useState, useEffect} from "react";
+import { handleSort, handleSearch } from "../../functions/handlers";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import  { TasksTable } from "./taskPartials/taskTables";
-import {SearchBar} from "../partials/misc";
+import { SearchBar } from "../partials/misc";
 
 const Tasks = (props)=>{
     const [loaded, setLoaded] = useState(false);
@@ -21,29 +22,6 @@ const Tasks = (props)=>{
         .catch(res => console.log(res))
     }, [sortState.order, search])
 
-    function handleSort(e){
-        const key = e.target.attributes.associated.value
-        const query = e.target.attributes.query.value
-        if(sortState.key == key){
-            setSortState({
-                key: key, 
-                ascending: !sortState.ascending, 
-                order: !sortState.ascending ? `${query}` : `${query} DESC`
-            });
-        } else {
-            setSortState({
-                key: key, 
-                ascending: true, 
-                order: `${query}`
-            });
-        }
-    }
-
-    function handleSearch(e){
-        e.preventDefault();
-        setSearch(e.target[0].value);
-    }
-
     if(!loaded){
         return null;
     } else {
@@ -55,10 +33,10 @@ const Tasks = (props)=>{
                         <Button variant="secondary" onClick={()=>{navigate("create")}}>Add New Task</Button>
                     </Col>
                     <Col xs="auto">
-                        <SearchBar handleSearch={handleSearch}/>
+                        <SearchBar handleSearch={e => handleSearch(e, setSearch)}/>
                     </Col>
                 </Row>
-                <TasksTable tasks={tasks} handleSort={handleSort} sortState={sortState} />
+                <TasksTable tasks={tasks} handleSort={e => handleSort(e, setSortState)} sortState={sortState} />
             </Container>
         )
     }    

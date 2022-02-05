@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { handleSort, handleSearch } from "../../functions/handlers";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useParams, useNavigate } from "react-router-dom";
 import { DoesNotExist, SearchBar } from "../partials/misc";
@@ -54,29 +55,6 @@ const ShowTag = props => {
     }, [sortState.order, search, params])   
     //As the page is not remounted when the chores link is clicked => state of tag is not refreshed
     //require useEffect to check on the params to fix this
-
-    function handleSort(e){
-        const key = e.target.attributes.associated.value
-        const query = e.target.attributes.query.value
-        if(sortState.key == key){
-            setSortState({
-                key: key, 
-                ascending: !sortState.ascending, 
-                order: !sortState.ascending ? `${query}` : `${query} DESC`
-            });
-        } else {
-            setSortState({
-                key: key, 
-                ascending: true, 
-                order: `${query}`
-            });
-        }
-    }
-
-    function handleSearch(e){
-        e.preventDefault();
-        setSearch(e.target[0].value);
-    }
     
     if(!loaded){
         return null;
@@ -90,9 +68,9 @@ const ShowTag = props => {
                 <Row className="align-items-center justify-content-between">
                     <Col className="fs-2">Associated Tasks</Col>
                     <Col xs="auto"><Settings display={tag.user_id == tag.session_id}/></Col>
-                    <Col xs="auto"><SearchBar handleSearch={handleSearch}/></Col>
+                    <Col xs="auto"><SearchBar handleSearch={e => handleSearch(e, setSearch)}/></Col>
                 </Row>
-                <TasksTable tasks={tag.tasks} handleSort={handleSort} sortState={sortState} />
+                <TasksTable tasks={tag.tasks} handleSort={e => handleSort(e, setSortState)} sortState={sortState} />
             </Container>
         )
     }
