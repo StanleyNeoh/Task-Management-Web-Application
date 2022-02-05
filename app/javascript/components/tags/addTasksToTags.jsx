@@ -40,13 +40,13 @@ const AddTasksToTags = props => {
             setSortState({
                 key: key, 
                 ascending: !sortState.ascending, 
-                order: !sortState.ascending ? `LOWER(${query})` : `LOWER(${query}) DESC`
+                order: !sortState.ascending ? `${query}` : `${query} DESC`
             });
         } else {
             setSortState({
                 key: key, 
                 ascending: true, 
-                order: `LOWER(${query})`
+                order: `${query}`
             });
         }
     }
